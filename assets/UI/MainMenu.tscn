@@ -1,0 +1,106 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/UI/sprites/black/right.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/background_color.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://assets/prefab/tiles/grass2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/prefab/tiles/corner1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/prefab/tiles/corner4.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/prefab/flora/mini/Grass1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/prefab/flora/trees/Tree1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/prefab/tiles/grass3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/prefab/tiles/grass5.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/prefab/flora/mini/Flower1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/prefab/flora/trees/Tree3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/prefab/tiles/corner3.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/prefab/flora/trees/Tree2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/UI/sprites/black/musicOff.png" type="Texture" id=15]
+[ext_resource path="res://assets/UI/sprites/black/gear.png" type="Texture" id=16]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="color" type="Sprite" parent="Background"]
+position = Vector2( 528, 324 )
+scale = Vector2( 100, 100 )
+texture = ExtResource( 2 )
+
+[node name="tiles" type="Node2D" parent="Background"]
+
+[node name="grass1" parent="Background/tiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 544 )
+
+[node name="grass2" parent="Background/tiles" instance=ExtResource( 4 )]
+position = Vector2( 160, 544 )
+
+[node name="grass3" parent="Background/tiles" instance=ExtResource( 6 )]
+position = Vector2( 240, 544 )
+
+[node name="Tree1" parent="Background/tiles" instance=ExtResource( 8 )]
+position = Vector2( 88, 504 )
+
+[node name="Flower1" parent="Background/tiles" instance=ExtResource( 7 )]
+position = Vector2( 240, 504 )
+
+[node name="grass4" parent="Background/tiles" instance=ExtResource( 13 )]
+position = Vector2( 480, 544 )
+
+[node name="grass5" parent="Background/tiles" instance=ExtResource( 9 )]
+position = Vector2( 560, 544 )
+
+[node name="grass6" parent="Background/tiles" instance=ExtResource( 10 )]
+position = Vector2( 640, 544 )
+
+[node name="grass7" parent="Background/tiles" instance=ExtResource( 4 )]
+position = Vector2( 720, 544 )
+
+[node name="grass8" parent="Background/tiles" instance=ExtResource( 6 )]
+position = Vector2( 800, 544 )
+
+[node name="Tree2" parent="Background/tiles" instance=ExtResource( 12 )]
+position = Vector2( 488, 504 )
+
+[node name="Tree3" parent="Background/tiles" instance=ExtResource( 14 )]
+position = Vector2( 656, 504 )
+
+[node name="Flower2" parent="Background/tiles" instance=ExtResource( 11 )]
+position = Vector2( 560, 504 )
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 20
+
+[node name="Play" type="TextureButton" parent="UI"]
+margin_left = 464.0
+margin_top = 276.0
+margin_right = 564.0
+margin_bottom = 376.0
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="TextureButton" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="TextureButton" parent="UI"]
+margin_left = 920.0
+margin_right = 1020.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="UI/Play" to="." method="_on_Play_pressed"]

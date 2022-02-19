@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/tilemap_packed.png" type="Texture" id=1]
+[ext_resource path="res://assets/prefab/flora/mini/mini.gd" type="Script" id=2]
+
+[node name="Flower1" type="Node2D"]
+scale = Vector2( 5, 5 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 48, 16, 16 )

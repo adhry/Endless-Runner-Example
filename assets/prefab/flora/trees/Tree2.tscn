@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/tilemap_packed.png" type="Texture" id=1]
+[ext_resource path="res://assets/prefab/flora/trees/trees.gd" type="Script" id=2]
+
+[node name="Tree3" type="Node2D"]
+scale = Vector2( 5, 5 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 80, 16, 16 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 0, -24 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 48, 16, 16 )
